@@ -1,0 +1,54 @@
+<title>Gisty</title>
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <a class="brand">Marek Bednarczyk - "Lepsza wersja My gists"</a>
+  </div>
+</div>
+ <div class="container">
+  <div class="hero-unit">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<h1>Lista naszych gistów</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Wrzutka</th>
+      <th>Język</th>
+      <th>Opis</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gists.each do |gist| %>
+      <tr class="success">
+        <td><%= gist.snippet %></td>
+        <td><%= gist.lang %></td>
+        <td><%= gist.description %></td>
+        <td><div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    Opcje <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#"><%= link_to 'Pokaż', gist %></a></li>
+    <li><a href="#"><%= link_to 'Edytuj', edit_gist_path(gist) %></a></a></li>
+    <li><a href="#"><%= link_to 'Usuń', gist, method: :delete, data: { confirm: 'Jesteś pewien, że chcesz usunąć wrzutkę?' } %></a></li>
+  </ul>
+</div>
+      </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<button type="button" class="btn btn-default"> <%= link_to 'Nowa wrzutka', new_gist_path %> </button>
+
+         </div><!-- .hero-unit -->
+        
+ </div><!-- .container -->
+     
