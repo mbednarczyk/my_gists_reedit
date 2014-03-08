@@ -6,19 +6,22 @@
 <div class="container">
   <div class="hero-unit">
 <p id="notice"><%= notice %></p>
+
 <p>
-  <strong>Lang:</strong>
+  <strong>Język</strong>
   <%= @gist.lang %>
 </p>
 <p>
-  <strong>Snippet:</strong>
+  <strong>Wrzutka:</strong>
 </p>
 <%= raw Pygments.highlight(@gist.snippet, lexer: @gist.lang) %>
 <p>
-  <strong>Description:</strong>
+  <strong>Opis:</strong>
   <%= @gist.description %>
 </p>
-<%= link_to 'Edit', edit_gist_path(@gist) %> |
-<%= link_to 'Back', gists_path %>
+<div class="btn-group btn-group-xs">
+<button type="button" class="btn btn-default"><%= link_to 'Edytuj', edit_gist_path(@gist) %> </button>
+<button type="button" class="btn btn-default"><%= link_to 'Powrót', gists_path %> </button>
+</div>
 </div>
 </div>
