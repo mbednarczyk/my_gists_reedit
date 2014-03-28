@@ -14,10 +14,14 @@ textarea{
 	height: 350px !important;
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 490px){
 	textarea{
 	width: 310px !important;
 	height: 150px !important;
+}
+pre{
+	width: 150px;
+	height: 150px;
 }
 }
 
