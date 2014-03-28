@@ -3,18 +3,23 @@ class GistsController < ApplicationController
 
   # GET /gists
   # GET /gists.json
-  def index
-    @gists = Gist.all
+   def index
+    get_and_show_gists
   end
 
-def index
-    @gists = Gist.paginate(page: params[:page], per_page: 3).order('created_at DESC')
+  def get_and_show_gists
+    @gists = Gist.paginate(page: params[:page], per_page: 9).order('created_at DESC')
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /gists/1
   # GET /gists/1.json
   def show
   end
+
 
   # GET /gists/new
   def new

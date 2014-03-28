@@ -1,13 +1,4 @@
-<title>Gisty</title>
-<!--  <div class="navbar navbar-inverse navbar-static-top">
-  <div class="navbar-inner">
-    <a class="brand">Marek Bednarczyk - Lepsza wersja My gists</a>
-</div>
-<button type="button" class="btn btn-navbar"> <%= link_to 'Nowa wrzutka', new_gist_path %> </button>
-</div>  -->
-
-
-
+<%- model_class = Gist -%>
 <div class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <a class="brand" href="/gists">Marek Bednarczyk - Lepsza wersja My gists</a>
@@ -20,98 +11,32 @@
 </div>
 
 
-  <!-- <div class="jumbotron"> -->
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-
-<!-- <h1>Lista naszych wrzutek</h1> -->
-<!-- <table class="table table-striped table-condensed table-hover table-responsive">
-  <thead>
-    <tr>
-      <th>Wrzutka</th>
-      <th>Język</th>
-      <th>Opis</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-
-    <% @gists.each do |gist| %>
-
-      <tr class="success">
-        <td><%= raw Pygments.highlight(gist.snippet.length > 30 ? gist.snippet[0,30] + "..." : gist.snippet, lexer: gist.lang) %></td>
-        <td><%= gist.lang %></td>
-        <td><%= gist.description %></td>
-        <td><div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-    Opcje <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <li><a href="#"><%= link_to 'Pokaż', gist %></a></li>
-    <li><a href="#"><%= link_to 'Edytuj', edit_gist_path(gist) %></a></a></li>
-    <li><a href="#"><%= link_to 'Usuń', gist, method: :delete, data: { confirm: 'Jesteś pewien, że chcesz usunąć wrzutkę?' } %></a></li>
-  </ul>
+<div id="infinite-scrolling" style="visibility: hidden;">
+  <%= will_paginate %>
 </div>
-      </td>
-      </tr>
 
-    <% end %>
-  </tbody>
-</table> -->
-<br>
-<br>
-<!-- <button type="button" class="btn btn-default"> <%= link_to 'Nowa wrzutka', new_gist_path %> </button> -->
-
-         <!-- </div> --><!-- .hero-unit -->
-       
-          <div class="jumbotron">
+<div id="my-gists">
+    <div class="jumbotron">
             <div class="container">
-            <h1>Lista naszych wrzutek</h1>
+              <h1>Lista naszych wrzutek</h1>
           <div class = "row">
-            <% @gists.each do |gist| %>
-            <div class = "col-lg-4">
-                  <table class="table table-striped table-condensed table-hover table-responsive">
-                      <thead>
-    <tr>
-      <th>Wrzutka</th>
-      <th>Język</th>
-      <th>Opis</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-                    <tr class="success">
-                <td><span><%= raw Pygments.highlight(gist.snippet.length > 30 ? gist.snippet[0,30] + "..." : gist.snippet, lexer: gist.lang) %></span></td>
-                
-               <td> <span><%= gist.lang %></span></td>
-                
-                <td><span><%= gist.description %></span></td>
-
-               <td><div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-    Opcje <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <li><a href="#"><%= link_to 'Pokaż', gist %></a></li>
-    <li><a href="#"><%= link_to 'Edytuj', edit_gist_path(gist) %></a></a></li>
-    <li><a href="#"><%= link_to 'Usuń', gist, method: :delete, data: { confirm: 'Jesteś pewien, że chcesz usunąć wrzutkę?' } %></a></li>
-  </ul>
-</div></td>
-</tr>
-</table>
-            </div>
-            <% end %>
-          </div>
-        <div class="pagination text-center">
-  <%= will_paginate renderer: BootstrapPagination::Rails %>
+      <%= render @gists %>
 </div>
+</div>
+            </div>
+          </div>
 </div>
         </div>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -128,4 +53,3 @@
           <p class="navbar-text pull-center"><%= facebook_like %></p>
         </div>
      </div>
-
