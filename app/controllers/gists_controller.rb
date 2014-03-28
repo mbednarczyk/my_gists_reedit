@@ -8,7 +8,7 @@ class GistsController < ApplicationController
   end
 
 def index
-    @gists = Gist.paginate(page: params[:page], per_page: 5).order('created_at DESC')
+    @gists = Gist.paginate(page: params[:page], per_page: 6).order('created_at DESC')
   end
 
   # GET /gists/1

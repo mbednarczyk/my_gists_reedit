@@ -14,15 +14,28 @@ textarea{
 	height: 350px !important;
 }
 
-select{
+@media screen and (max-width: 400px){
+	textarea{
+	width: 310px !important;
+	height: 150px !important;
+}
+}
+
+// select{
+// 	width: 800px !important;
+// }
+
+input.field{
 	width: 800px !important;
 }
 
-input{
-	width: 800px !important;
-}
+
 
 label{
 	text-align: center;
+}
+
+.highlight{
+	max-width: 800px !important;
 }
 

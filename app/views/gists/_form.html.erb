@@ -18,10 +18,11 @@ allowed = allowed.sort
 
 
 <div class="field">
+
     <%= f.label :Wrzutka %>
     <%= f.text_area :snippet, :size => "80x10" %>
   </div>
-  <div class="field">
+  <div class="field" id="jj">
     <%= f.label :Język %>
     <%= f.select :lang, allowed %>
   </div>
@@ -30,7 +31,7 @@ allowed = allowed.sort
     <%= f.text_field :description %>
   </div>
   <div class="actions">
-    <%= f.submit :Gotowe %>
+    <%= f.submit :Gotowe, style:"width: 100px;" %>
   </div>
 
 <% end %>
