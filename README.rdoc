@@ -1,28 +1,23 @@
-== README
+== My Gists
+Aplikacja zaliczeniowa na laboratoria ASI. Prowadzący dr Włodzimierz Bzyl
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+== Link do działającej aplikacji na HEROKU:
+http://mygistsmbednarczyk.herokuapp.com/
 
-Things you may want to cover:
+== Funkcjonalność
+Aplikacja opiera się na funkcjonalnościach CRUD
 
-* Ruby version
+== Funkcjonalność dodatkowa
+- Kolorowanie wrzutki na stronie głownej jak i podczas podglądu,
+- Paginacja (infinite scrolling),
+- Przycinanie kodu na stronie głównej, gdy jest zbytł długi
+- Facebookowe "lajki" - posiadacz konta w serwisie społecznościowym może polubić piękną aplikacje :)!
+- Wyszukiwanie wrzutek po języku programowania
+- Responsive web desing
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== Użyte gemy (dodatkowe)
+-  bootstrap-sass
+- will_paginate
+- will_paginate-bootstrap
+- pygments.rb
+- redcarpet
